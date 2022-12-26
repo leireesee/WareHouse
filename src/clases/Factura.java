@@ -1,11 +1,10 @@
 package clases;
 
-import java.security.PublicKey;
 import java.util.Date;
 
 public class Factura {
 	
-	//VARIABLES
+	//ATRIBUTOS
 	private static final int IVA = 21;
 	private int numero;
 	private String nombreEmpresa;

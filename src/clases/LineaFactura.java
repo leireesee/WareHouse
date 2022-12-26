@@ -2,10 +2,19 @@ package clases;
 
 public class LineaFactura {
 	
-	//VARIABLES
+	//ATRIBUTOS
 	private int numero;
 	private String articulo;
 	private int cantidad;
+	
+	//CONSTRUCTOR
+	public LineaFactura () {}
+	
+	public LineaFactura(int numero, String articulo, int cantidad) {
+		this.numero = numero;
+		this.articulo = articulo;
+		this.cantidad = cantidad;
+	}
 	
 	//METODOS
 	public double precioTotal() {
