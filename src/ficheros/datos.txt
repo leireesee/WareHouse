@@ -1,0 +1,9 @@
+11;refresco;fanta;33;0.55;20;naranja;true;true;15
+12;refresco;fanta;33;0.55;27;limon;true;true;13
+13;refresco;fanta;33;0.55;11;pina;true;true;23
+21;vino;patarrero;100;1.23;12;morado;espania;2022;normal;9.5
+22;vino;tinto;100;1.72;20;morado;navarra;2019;normal;13.2
+23;vino;blanco;100;1.52;8;blanco;espania;2021;normal;11.3
+31;cerveza;estrella galicia;33;0.72;50;galicia;cebada y malta;5.0
+32;cerveza;estrella dam;33;0.52;47;madrid;cebada;3.5
+33;cerveza;mecadona;33;0.23;30;valencia;lupulo;3.4

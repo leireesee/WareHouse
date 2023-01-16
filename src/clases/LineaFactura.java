@@ -4,13 +4,13 @@ public class LineaFactura {
 	
 	//ATRIBUTOS
 	private int numero;
-	private String articulo;
+	private Articulo articulo;
 	private int cantidad;
 	
 	//CONSTRUCTOR
 	public LineaFactura () {}
 	
-	public LineaFactura(int numero, String articulo, int cantidad) {
+	public LineaFactura(int numero, Articulo articulo, int cantidad) {
 		this.numero = numero;
 		this.articulo = articulo;
 		this.cantidad = cantidad;
@@ -18,7 +18,7 @@ public class LineaFactura {
 	
 	//METODOS
 	public double precioTotal() {
-		
+		return articulo.precioTotal() * cantidad;
 	}
 	
 	//GETTERS / SETTERS
@@ -28,10 +28,10 @@ public class LineaFactura {
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
-	public String getArticulo() {
+	public Articulo getArticulo() {
 		return articulo;
 	}
-	public void setArticulo(String articulo) {
+	public void setArticulo(Articulo articulo) {
 		this.articulo = articulo;
 	}
 	public int getCantidad() {

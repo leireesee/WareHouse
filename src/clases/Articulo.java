@@ -3,12 +3,12 @@ package clases;
 public abstract class Articulo {
 	
 	//ATRIBUTOS
-	private String code;
-	private String name;
-	private String mark;
-	private int capacidadBotella;
-	private double precio;
-	private int stock;
+	protected String code;
+	protected String name;
+	protected String mark;
+	protected int capacidadBotella;
+	protected double precio;
+	protected int stock;
 	
 	//CONSTRUCTOR
 	public Articulo() {}
@@ -22,20 +22,27 @@ public abstract class Articulo {
 		this.stock = stock;
 	}
 	
+	
+	
+	@Override
+	public String toString() {
+		return code + ";" + name + ";" + mark + ";" + capacidadBotella + ";" + precio + ";" + stock;
+	}
+
 	//METODOS
-	public void incrementarStock() {
-		
+	public void incrementarStock(int cantidad) {
+		stock = stock + cantidad;
 	}
 	
-	public void disminuirStock() {
-		
+	public void disminuirStock(int cantidad) {
+		stock = stock - cantidad;	
 	}
 	
 	public abstract void visualizarArticulo();
 	
 	public abstract boolean saludable();
 	
-	public abstract void precioTotal();
+	public abstract double precioTotal();
 	
 	//GETTERS / SETTERS
 	public String getCode() {

@@ -1,5 +1,7 @@
 package clases;
 
+import interfaces.Alcoholico;
+
 public class Vino extends Articulo implements Alcoholico{
 	
 	//ATRIBUTOS
@@ -21,33 +23,54 @@ public class Vino extends Articulo implements Alcoholico{
 		this.gradosAlcohol = gradosAlcohol;
 	}
 	
+	
+	
+	@Override
+	public String toString() {
+		return code + ";" + name + ";" + mark + ";" + capacidadBotella + ";" + precio + ";" + stock + ";" + color + ";" + origen + ";" + anio + ";" + tipoDeUva + ";" + gradosAlcohol;
+	}
+
 	//METODOS
 	@Override
 	public void visualizarArticulo() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("code -> " + super.code + ", name -> " + super.name + ", mark -> " + super.mark + ", capacidadBotella -> "
+				+ super.capacidadBotella + ", precio -> " + super.precio + ", stock -> " + super.stock + "color -> " + color + ", origen -> " + origen + ", anio -> " + anio + ", tipoDeUva -> " + tipoDeUva
+				+ ", gradosAlcohol -> " + gradosAlcohol);
 	}
 
 	@Override
 	public boolean saludable() {
 		// TODO Auto-generated method stub
+		if (origen.equals("navarra")) {
+			return true;
+		}
 		return false;
 	}
 
 	@Override
-	public void precioTotal() {
+	public double precioTotal() {
 		// TODO Auto-generated method stub
-		
+		return precio + precio * 0.21;
 	}
+	
 	
 	//METODOS FROM ALCOHOLICO
+	@Override
 	public boolean esFuerte() {
-		
+		// TODO Auto-generated method stub
+		if (gradosAlcohol > 13.5) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public double calcularTasa() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
-	public double calcularTasa() {
-		
-	}
 
 	//GETTERS / SETTERS
 	public String getColor() {
@@ -81,5 +104,7 @@ public class Vino extends Articulo implements Alcoholico{
 	public void setGradosAlcohol(double gradosAlcohol) {
 		this.gradosAlcohol = gradosAlcohol;
 	}
+
+	
 
 }

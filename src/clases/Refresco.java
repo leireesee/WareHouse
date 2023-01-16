@@ -19,31 +19,36 @@ public class Refresco extends Articulo{
 		this.cantidadAzucar = cantidadAzucar;
 	}
 	
+	
+	
 	//METODOS
-	public void visualizarPropiedades() {
-		
-	}
 	
-	public boolean esSaludable() {
-		
+	@Override
+	public String toString() {
+		return code + ";" + name + ";" + mark + ";" + capacidadBotella + ";" + precio + ";" + stock + ";" + sabor + ";" + zumo + ";" + gaseoso + ";" + cantidadAzucar;
 	}
-	
+
 	@Override
 	public void visualizarArticulo() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("code -> " + super.code + ", name -> " + super.name + ", mark -> " + super.mark + ", capacidadBotella -> "
+				+ super.capacidadBotella + ", precio -> " + super.precio + ", stock -> " + super.stock + "sabor -> " + sabor + ", zumo -> " + zumo + ", gaseoso -> " + gaseoso + ", cantidadAzucar -> "
+				+ cantidadAzucar);
 	}
 
 	@Override
 	public boolean saludable() {
 		// TODO Auto-generated method stub
+		if (cantidadAzucar < 20) {
+			return true;
+		}
 		return false;
 	}
 
 	@Override
-	public void precioTotal() {
+	public double precioTotal() {
 		// TODO Auto-generated method stub
-		
+		return precio + precio * 0.21;
 	}
 	
 	//GETTERS / SETTERS
