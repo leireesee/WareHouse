@@ -99,7 +99,7 @@ public class Almacen {
 	
 	public boolean disponibilidad(int cantidad, String codigoProducto) {
 		Articulo articuloBuscado = buscarArticulo(codigoProducto);
-		if (cantidad < articuloBuscado.getStock()) {
+		if (cantidad <= articuloBuscado.getStock()) {
 			return true;
 		}
 		
