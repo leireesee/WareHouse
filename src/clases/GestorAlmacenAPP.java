@@ -92,17 +92,30 @@ public class GestorAlmacenAPP {
 						do {
 							System.out.println("Introduce el código del artículo");
 							codigoProducto = teclado.nextLine();
+							
 							articulo = almacen.buscarArticulo(codigoProducto);
+							
+							if (articulo == null) {
+								System.out.println("El artículo no existe");
+							}
+							
 						} while (articulo == null);
 						
 						
 						int cantidad;
+						boolean disponibilidad;
 						
 						do {
 							System.out.println("Introduce la cantidad de artículos a vender");
 							cantidad = Integer.parseInt(teclado.nextLine());
-							almacen.disponibilidad(cantidad, codigoProducto);
-						} while (!almacen.disponibilidad(cantidad, codigoProducto));
+							
+							disponibilidad = almacen.disponibilidad(cantidad, codigoProducto);
+							
+							if (!disponibilidad) {
+								System.out.println("Stock insuficiente!");
+							}
+							
+						} while (!disponibilidad);
 						
 						articulo.disminuirStock(cantidad);
 												
